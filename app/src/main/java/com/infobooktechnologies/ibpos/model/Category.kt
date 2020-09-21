@@ -1,24 +1,33 @@
 package com.infobooktechnologies.ibpos.model
 
-data class Category(val categoryId:String,
-                    val categoryName:String,
-                    val categoryDesc:String,
-                    val categoryType:String)
+import androidx.annotation.NonNull
+import androidx.room.Embedded
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import org.jetbrains.annotations.NotNull
 
 
-data class MenuItem (val itemId:String,
-                     val itemName:String,
-                     val itemDesc:String,
-                     val itemPrice:Double,
-                     val itemWeight:String,
-                     val itemQty:Int,
-                     val itemCategory: Category){
-    val level:Level?=null
-}
+@Entity
+data class Category(@PrimaryKey val categoryId:String,
+                    @NonNull val categoryName:String,
+                    @NonNull val categoryDesc:String,
+                    @NonNull val categoryType:String)
 
-data class Level(val levelId:String,
-                 val levelName:String)
+@Entity
+data class MenuItem (@PrimaryKey val itemId:String,
+                     @NonNull val itemName:String,
+                     @NonNull val itemDesc:String,
+                     @NonNull val itemPrice:String,
+                     @NonNull val itemWeight:String,
+                     @NonNull val itemQty:String,
+                     @Embedded val category: Category,
+                     val isLevel:Boolean
+                    )
 
-data class CartItem(val cartId:String,
-                    val menuItem: MenuItem,
-                    var addNotes:String)
+@Entity
+data class Level(@PrimaryKey val levelId:String,
+                 @NonNull val levelName:String)
+@Entity
+data class CartItem(@PrimaryKey val cartId:String,
+                    @NonNull val menuItem: MenuItem,
+                    @NonNull var addNotes:String)

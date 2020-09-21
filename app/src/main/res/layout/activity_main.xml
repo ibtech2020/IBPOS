@@ -13,18 +13,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#FFF"
-        android:layout_weight=".32"/>
+        android:layout_weight=".65"/>
 
-    <FrameLayout
+    <!--<FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background_screen"
-        android:layout_weight=".4"/>
+        android:layout_weight=".4"/>-->
     <FrameLayout
+        android:id="@+id/menu_item_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFF"
-        android:layout_weight=".28"/>
+        android:background="@drawable/background_screen"
+        android:layout_weight=".35"/>
 
 
 </LinearLayout>

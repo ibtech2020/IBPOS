@@ -1,10 +1,11 @@
-package com.infobooktechnologies.ibpos
+package com.infobooktechnologies.ibpos.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.infobooktechnologies.ibpos.R
 
 class CartViewFragment : Fragment() {
 
